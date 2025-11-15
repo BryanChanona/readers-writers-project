@@ -15,6 +15,7 @@ public class ReaderWriter{
             monitor.startRead();
             System.out.println(name+ " leyendo: "+ sharedData);
             Thread.sleep(1000);
+            System.out.println(name + " terminó de leer");
             monitor.stopRead();
         }catch (InterruptedException e){
             e.printStackTrace();
@@ -27,6 +28,7 @@ public class ReaderWriter{
             sharedData++;
             System.out.println(name + " escribiendo: " + sharedData);
             Thread.sleep(800); //Simular escritura
+            System.out.println(name + " terminó de escribir");
             monitor.stopWrite();
             Thread.sleep(150); // Hace visible la intermitencia
         }catch (InterruptedException e){
